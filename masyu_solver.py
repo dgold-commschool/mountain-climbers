@@ -33,3 +33,10 @@ print(mas_find_all_soln(impossible_puzzle1))"""
 puzz3 = ["b", "..", "...", "....", ".....", ["w", "bb", "b", "b", "w", "w"]]
 
 print(mas_find_all_soln(puzz3, "count"))
+
+puzz4 = [".", "..", "...", "....", ".....", [".", "b", "bb", "bbbb", "bbb", "."]]
+
+for last_row in list(itertools.permutations([".", "b", "bb", "bbb", "bbb", "."])):
+    puzz4 = ["b", "..", "...", "....", ".....", last_row]
+    if mas_is_good(puzz4, "count"):
+        print(puzz4)
